@@ -68,7 +68,7 @@ jobs:
        script: |
          cd yamdb_final
          sudo mv example_env .env
-         sudo docker-compose up
+         sudo docker-compose up --build -d
 
   send_message:
     runs-on: ubuntu-latest
