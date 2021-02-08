@@ -37,7 +37,7 @@ class User(AbstractUser):
     last_name = models.TextField(max_length=30, blank=True, null=True)
 
     class Meta:
-        db_table = "users"
+        db_table = "userss"
 
     @property
     def is_admin(self):
