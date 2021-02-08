@@ -56,8 +56,8 @@ jobs:
        key: ${{ secrets.SSH_KEY }}
        passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
        script: |
-         sudo docker pull vadim3x4/yamdb
-         sudo docker-compose up --force-recreate -d web
+         sudo docker pull vadim3x4/yamdb:latest
+         sudo docker-compose up 
 
   send_message:
     runs-on: ubuntu-latest
