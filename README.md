@@ -1,7 +1,5 @@
 # API сервис YamDB
-
-https://github.com/vadim3x4/yamdb_final/workflows/main.yml/badge.svg
-
+https://github.com/IcGrem/yamdb_final/workflows/yamdb-final-workflow/badge.svg
 ## 
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Title). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
 При разработке приложения использованы фреймфорки ```django и django-rest-framework```. В качестве базы выступает ```postgresql```
