@@ -1,5 +1,6 @@
 # API сервис YamDB
-![Build Status](https://github.com/IcGrem/yamdb_final/workflows/yamdb-final-workflow/badge.svg)
+![Build Status](https://github.com/Vadim3x4/yamdb_final/workflows/Yamdb-app%20workflow/badge.svg)
+
 ## 
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Title). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
 При разработке приложения использованы фреймфорки ```django и django-rest-framework```. В качестве базы выступает ```postgresql```
@@ -19,11 +20,11 @@ POSTGRES_PASSWORD=
 DB_HOST=
 DB_PORT=
 ```
-### 2. Запуск контейнера
+### 3. Запуск контейнера
 ```bash
 docker-compose up --build -d
 ```
-### 3. Миграции 
+### 4. Миграции 
 Для входа в контейнер выполните команду:
 ```bash
 docker-compose exec web bash
@@ -33,20 +34,32 @@ docker-compose exec web bash
 python manage.py makemigrations
 python manage.py migrate
 ```
-### 4. Инициализации стартовых данных:
+### 5. Запуск автотестов:
+```bash
+pytest
+```
+### 6. Инициализации стартовых данных:
 ```bash
 python manage.py loaddata fixtures.json
 ```
-### 5. Создание суперпользователя:
+### 7. Создание суперпользователя:
 ```bash
 python manage.py createsuperuser
 ```
-### 5. Выйти из контейнера:
+### 8. Выйти из контейнера:
 ```bash
 exit
 ```
-### 6. Остановить контейнер:
+### 9. Остановить контейнер:
 ```bash
 docker-compose down
 ```
 Документация для использования API 127.0.0.1:8000/redoc
+### Используемые технологии: Python 3.8.5, Django, Django REST, PostgreSQL, Docker.
+### Авторы
+
+[Вадим Кокшаров](https://github.com/Vadim3x4)  - написал часть, касающуюся управления пользователями (Auth и Users): систему регистрации и аутентификации, права доступа, работу с токеном, систему подтверждения e-mail, поля.
+
+[Ирина Назарова](https://github.com/Irina-Nazarova)  - написала категории (Categories), жанры (Genres) и произведения (Titles): модели, view и эндпойнты для них.
+
+[Елизавета Безякина](https://github.com/bezyakina)  - написаны отзывы (Review) и комментарии (Comments): описывала модели и view, настраивала эндпойнты, определяла права доступа для запросов. Рейтинги произведений.
