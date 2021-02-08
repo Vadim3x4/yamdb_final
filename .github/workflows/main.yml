@@ -66,7 +66,7 @@ jobs:
        key: ${{ secrets.SSH_KEY }}
        passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
        script: |
-         cd yamdb
+         cd /yamdb
          sudo mv example_env .env
          sudo docker-compose up
 
