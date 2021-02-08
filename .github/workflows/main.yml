@@ -60,10 +60,11 @@ jobs:
        passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
        script: |
          cd yamdb_final
-         sudo docker-compose down
-         sudo docker image rm -a ${{ secrets.DOCKER_LOGIN }}/yamdb_final:latest
          sudo mv example_env .env
-         sudo docker-compose up --build -d
+         sudo docker pull ${{ secrets.DOCKER_LOGIN }}/yamdb_final:latest
+         sudo docker-compose up --force-recreate --no-deps -d web
+         sudo docker image prune -f
+         
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
