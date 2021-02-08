@@ -56,7 +56,7 @@ jobs:
        username: ${{ secrets.USER }}
        key: ${{ secrets.SSH_KEY }}
        passphrase: ${{ secrets.PASSPHRASE }}
-       source: docker-compose.yaml, example_env, nginx
+       source: docker-compose.yaml, example_env, nginx, Dockerfile
        target: yamdb_final
    - name: executing remote ssh commands to deploy
      uses: appleboy/ssh-action@master
@@ -67,8 +67,8 @@ jobs:
        passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
        script: |
          cd yamdb
-         sudo docker pull vadim3x4/yamdb:latest
-         sudo docker-compose up 
+         mv example_env .env
+         sudo docker-compose up
 
   send_message:
     runs-on: ubuntu-latest
