@@ -1,8 +1,9 @@
-/yamdb_workflow.yaml
-/Dockerfile
-/example_env
-/docker-compose.yaml
-/tests
-/pytest.ini
-/run.sh
+yamdb_workflow.yaml
+Dockerfile
+example_env
+docker-compose.yaml
+pytest.ini
+run.sh
+
 /data
+/tests
