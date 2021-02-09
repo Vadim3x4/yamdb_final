@@ -23,10 +23,11 @@ services:
     volumes:
       - static_volume:/code/staticfiles
   nginx:
-    build: ./nginx
+    image: nginx:1.19.6
     ports:
       - 80:80
     depends_on:
       - web
     volumes:
       - static_volume:/code/staticfiles
+      - ./nginx:/etc/nginx/conf.d
