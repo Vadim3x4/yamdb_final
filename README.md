@@ -1,14 +1,29 @@
 # API сервис YamDB
 ![Build Status](https://github.com/Vadim3x4/yamdb_final/workflows/Yamdb-app%20workflow/badge.svg)
 
-## 
+#### Проверить API можно по адресу - http://84.201.176.219/api/v1/
+#### Документация API доступна по адресу http://84.201.176.219/redoc
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Title). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
 При разработке приложения использованы фреймфорки ```django и django-rest-framework```. В качестве базы выступает ```postgresql```
 Запуск проекта осуществляется средствами ```docker```
 
-## Установка
+## Быстрая установка используя make.
+```bash
+make                    - Показать доступные команлы
+make docker		- Запуск скрипта для установки docker и docker-compose
+make run		- Запуск контейнеров 
+make migrate		- Выполнить миграции 
+make fixtures		- Загрузить дамп fixtures.json в БД 
+make superuser		- Создать суперпользователя 
+make web		- Консоль web контейнера.
+make postgresql		- Консоль Posgresql контейнера.
+make nginx		- Консоль nginx контейнера.
+make stop		- Выключение контейнера.
 
-### 1. Установка docker и docker-compose
+```
+## Ручная установка.
+
+### 1. Установка docker и docker-compose:
 Для запуска проекта требуется установка Docker и Docker-compose
 (https://docs.docker.com/engine/install/).
 
@@ -20,11 +35,11 @@ POSTGRES_PASSWORD=
 DB_HOST=
 DB_PORT=
 ```
-### 3. Запуск контейнера
+### 3. Запуск контейнера:
 ```bash
 docker-compose up --build -d
 ```
-### 4. Миграции 
+### 4. Миграции:
 Для входа в контейнер выполните команду:
 ```bash
 docker-compose exec web bash
